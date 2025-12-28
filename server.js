@@ -38,7 +38,7 @@ const userLimiter = rateLimit({
     standardHeaders: true,
     legacyHeaders: false,
 });
-app.use('/api/', userLimiter);
+app.use('/api', userLimiter);
 
 // 3. Глобальне Лімітування (Захист від перевищення добового ліміту OpenWeatherMap)
 const GLOBAL_DAILY_LIMIT = 900; 
@@ -62,7 +62,7 @@ const checkGlobalLimit = (req, res, next) => {
 
     next();
 };
-app.use('/api/', checkGlobalLimit);
+app.use('/api', checkGlobalLimit);
 
 // === ФУНКЦІЯ ОБРОБКИ ДАНИХ ДЛЯ FRONT-END ===
 function processWeatherData(owmData) {
