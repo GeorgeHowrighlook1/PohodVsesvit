@@ -21,8 +21,7 @@ const VALID_CITIES = [
 
 // 1. Налаштування CORS
 const corsOptions = {
-    // Дозволяємо запити з будь-якого джерела (для тестування). Пізніше замінити на домен Front-end.
-    origin: '*', 
+    origin: 'https://georgehowrighlook1.github.io/pohod-vsesvit-frontend', 
     methods: 'GET,POST',
 };
 app.use(cors(corsOptions));
