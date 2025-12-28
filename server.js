@@ -86,8 +86,8 @@ function processWeatherData(owmData) {
 }
 
 // 4. Основний маршрут проксі-сервера
-app.post('/api/weather', async (req, res) => {
-    const { city } = req.body;
+app.get('/api/weather', async (req, res) => {
+    const { city } = req.query;
 
     // ПЕРЕВІРКА №1: Наявність API ключа
     if (!API_KEY) {
